@@ -267,19 +267,28 @@
         
       <h2 class="button" id="contact-me">Contact Me</h2>
     	<div class="slide" data-slidename="contact-me">
-    		
-    		<form name="contactForm" onsubmit="return validateForm()" method="post">
-            <div class="contactForm">
-           		<label class="contactLabel">name</label>
-				<input class="text" type="text" name="yourname" value="" size="40"><label class="contactLabel">email</label>
-				<input class="text" type="text" name="youremail" value="" size="40"><label class="contactLabel">phone</label>
-				<input class="text" type="text" name="yourphone" value="" size="40"></div>
-			<div class="message">
-				<label class="contactLabel">message</label>
-				<textarea name="yourmessage" cols="40" rows="10"></textarea><input class="submit" type="submit" value="Send Message" send><span id="send-loader"></span>
-				<span id="sent-text"></span>
-            </div>
-            </form></div>
+
+			<div id="wufoo-zyo6w6h07x4s48">
+				Fill out my <a href="https://labweb.wufoo.com/forms/zyo6w6h07x4s48">online form</a>.
+			</div>
+			<div id="wuf-adv" style="font-family:inherit;font-size: small;color:#a7a7a7;text-align:center;display:block;">Use <a href="http://www.wufoo.com/partners/">Wufoo integrations</a> and get your data to your favorite apps.</div>
+			<script type="text/javascript">var zyo6w6h07x4s48;(function(d, t) {
+				var s = d.createElement(t), options = {
+					'userName':'labweb',
+					'formHash':'zyo6w6h07x4s48',
+					'autoResize':true,
+					'height':'497',
+					'async':true,
+					'host':'wufoo.com',
+					'header':'show',
+					'ssl':true};
+				s.src = ('https:' == d.location.protocol ? 'https://' : 'http://') + 'www.wufoo.com/scripts/embed/form.js';
+				s.onload = s.onreadystatechange = function() {
+					var rs = this.readyState; if (rs) if (rs != 'complete') if (rs != 'loaded') return;
+					try { zyo6w6h07x4s48 = new WufooForm();zyo6w6h07x4s48.initialize(options);zyo6w6h07x4s48.display(); } catch (e) {}};
+				var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
+			})(document, 'script');</script>
+		</div>
              
     		
     	</div>
