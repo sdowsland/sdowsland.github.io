@@ -5,8 +5,6 @@ on: [push]
 jobs:
   build:
 
-    secrets: ["aws_access_key_id", "aws_secret_access_key"]
-
     runs-on: ubuntu-18.04
     
     env:
