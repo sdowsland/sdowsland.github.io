@@ -32,7 +32,7 @@ jobs:
         npm install
         npm run build --if-present
         cd dist/webapp
-        aws s3 sync . s3://stephen.dowsland.net --acl "public-read"
+        aws s3 sync . s3://stephen.dowsland.net --acl "public-read" --delete
         # npm test
       env:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
