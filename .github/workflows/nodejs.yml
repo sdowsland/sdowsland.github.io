@@ -21,6 +21,9 @@ jobs:
       run: |
         sudo apt-get install python3-setuptools
         pip3 install --upgrade --user awscli
+        echo "where is AWS"
+        which aws
+        which awscli
         aws s3 ls
     - name: npm install and build
       run: |
