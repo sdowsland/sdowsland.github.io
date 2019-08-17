@@ -7,10 +7,6 @@ jobs:
 
     runs-on: ubuntu-18.04
     
-    env:
-      aws_access_key_id: ${{ secrets.aws_access_key_id }}
-      aws_secret_access_key: ${{ secrets.aws_secret_access_key }}
-
     strategy:
       matrix:
         node-version: [10.x]
@@ -24,6 +20,9 @@ jobs:
     - name: Add AWS CLI
       run: |
         aws s3 ls
+      env:
+        aws_access_key_id: ${{ secrets.aws_access_key_id }}
+        aws_secret_access_key: ${{ secrets.aws_secret_access_key }}
     - name: npm install and build
       run: |
         npm install -g @angular/cli
