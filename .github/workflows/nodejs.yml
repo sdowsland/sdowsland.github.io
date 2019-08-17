@@ -5,6 +5,8 @@ on: [push]
 jobs:
   build:
 
+    secrets: ["aws_access_key_id", "aws_secret_access_key"]
+
     runs-on: ubuntu-18.04
 
     strategy:
@@ -13,7 +15,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    - secrets: ["aws_access_key_id", "aws_secret_access_key"]
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
