@@ -5,7 +5,7 @@ on: [push]
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
 
     strategy:
       matrix:
@@ -13,15 +13,13 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
+    - secrets: ["aws_access_key_id", "aws_secret_access_key"]
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
     - name: Add AWS CLI
       run: |
-        sudo apt-get install awscli
-        echo "where is AWS"
-        which aws
         aws s3 ls
     - name: npm install and build
       run: |
