@@ -1,6 +1,9 @@
 name: Build Angular App
 
-on: [push]
+on:
+  push:
+    branches:
+    - master  
 
 jobs:
   build:
@@ -13,17 +16,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
+    - uses: actions/aws/cli@master
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - name: Add AWS CLI
-      run: |
-        sudo apt-get -y install awscli
-      env:
-        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        AWS_DEFAULT_REGION: eu-west-2
     - name: npm install, build and deploy
       run: |
         npm install -g @angular/cli
