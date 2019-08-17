@@ -19,11 +19,9 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - name: Add AWS CLI
       run: |
-        sudo apt-get install python3-setuptools python3-dev
-        pip3 install --upgrade awscli
+        sudo apt-get install awscli
         echo "where is AWS"
         which aws
-        which awscli
         aws s3 ls
     - name: npm install and build
       run: |
