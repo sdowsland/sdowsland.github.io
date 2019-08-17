@@ -19,7 +19,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - name: Add AWS CLI
       run: |
-        sudo snap install aws-cli
+        sudo snap install aws-cli --classic
         aws s3 ls
       env:
         aws_access_key_id: ${{ secrets.aws_access_key_id }}
